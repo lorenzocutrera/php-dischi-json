@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 
-<body>
+<body id="app">
     <header class="d-flex">
         <div class="logo mx-4">
             <img width="100px" src="./logo.svg" alt="">
@@ -21,17 +21,19 @@
         <div class="container">
 
             <div class="row">
-                <div class="col-4">
+                <div v-for="disco in dischi" class="col-4">
                     <div class="card">
-                        <div class="img-card-top">
-                            <div class="card-body">
-                                <h3></h3>
-                                <p></p>
-                                <h3></h3>
+                        
+                           <img class="img-card-top" :src="disco.poster" alt="">
+                        
+                         <div class="card-body">
+                                <h3>{{disco.title}}</h3>
+                                <p>{{disco.author}}</p>
+                                <h3>{{disco.year}}</h3>
                             </div>
-                        </div>
                     </div>
                </div>
+               
 
             </div>
 
@@ -46,6 +48,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js" integrity="sha512-emSwuKiMyYedRwflbZB2ghzX8Cw8fmNVgZ6yQNNXXagFzFOaQmbvQ1vmDkddHjm5AITcBIZfC7k4ShQSjgPAmQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./main.js"></script>
 </body>
 
